@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.16.175.135:3306/springcloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      #      url: jdbc:mysql://192.168.0.166:3306/management?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      #      url: jdbc:mysql://192.168.2.196:3306/management?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: zero
+    password: zero
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.gjt.mm.mysql.Driver
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+
+mybatis:
+  type-aliases-package: com.wangyiran.springcloud.entity #实体类的存放路径，如：com.funtl.hello.spring.boot.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
