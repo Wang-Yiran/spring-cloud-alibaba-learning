@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -28,11 +28,8 @@ eureka:
 #      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/
       defaultZone: http://localhost:7001/eureka/, http://localhost:7002/eureka/
   instance:
-    instance-id: payment8001
+    instance-id: payment8002
     prefer-ip-address: true
-#    lease-renewal-interval-in-seconds: 1 # eureka客户端向服务端发送心跳的时间间隔 单位秒 默认30
-#    lease-expiration-duration-in-seconds: 2 # eureka
-
 
 mybatis:
   type-aliases-package: com.wangyiran.springcloud.entity #实体类的存放路径，如：com.funtl.hello.spring.boot.entity

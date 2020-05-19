@@ -1,4 +1,4 @@
-package com.springcloud.controller;
+package com.wangyiran.springcloud.controller;
 
 import com.wangyiran.springcloud.entity.CommonResult;
 import com.wangyiran.springcloud.entity.Payment;
@@ -22,14 +22,15 @@ public class OrderController {
     @Resource
     RestTemplate restTemplate;
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+//    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
-    @GetMapping("/comsumer/payment/create")
+    @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment){
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }
 
-    @GetMapping("/comsumer/payment/get/{id}")
+    @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> create(@PathVariable("id") Long id){
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }

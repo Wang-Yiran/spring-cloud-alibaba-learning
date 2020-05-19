@@ -49,6 +49,7 @@ public class PaymentController {
             return new CommonResult(400, "没有对应记录", id);
         }
     }
+
     @GetMapping(value = "/payment/discovery")
     public Object discovery(){
         List<String> services = discoveryClient.getServices();
