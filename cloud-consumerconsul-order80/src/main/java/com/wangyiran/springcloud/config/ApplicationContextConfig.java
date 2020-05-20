@@ -6,16 +6,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @program: spring-cloud-alibaba-learning
- * @description:
- * @author: Wang Yiran
- * @create: 2020-05-19 02:29
+ * @ClassName: ApplicationContextConfig
+ * @description: 配置类
+ * @author: XZQ
+ * @create: 2020/3/5 21:25
  **/
 @Configuration
 public class ApplicationContextConfig {
+
     @Bean
-//    @LoadBalanced
-    public RestTemplate getRestTemplate(){
+    @LoadBalanced//开启负载均衡
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 }
