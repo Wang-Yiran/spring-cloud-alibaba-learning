@@ -28,7 +28,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.xzq.springcloud</groupId>
+            <groupId>com.wangyiran</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -1,0 +1,36 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          skipSslValidation: true # 跳过ssl认证
+#          uri: git@github.com:Wang-Yiran/spring-cloud-alibaba-config.git
+          uri: https://github.com/Wang-Yiran/spring-cloud-alibaba-config.git
+          search-paths:
+            - spring-cloud-alibaba-config
+      label: master
+
+  rabbitmq:
+  #  host: localhost
+    host: 172.16.175.135
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+
+# 暴露bus刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"  # curl -X POST "http://127.0.0.1:3344/actuator/bus-refresh" 发送后通过rabbitmq自动更新客户端配置
+        # curl -X POST "http://127.0.0.1:3344/actuator/bus-refresh/config-client:3355"  config-client:3355代表微服务名和端口号 定点通知发送后通过rabbitmq自动更新客户端配置

@@ -18,7 +18,7 @@
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.xzq.springcloud</groupId>
+            <groupId>com.wangyiran</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
         </dependency>
